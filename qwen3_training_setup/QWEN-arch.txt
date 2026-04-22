@@ -1,0 +1,544 @@
+================================================================================
+QWEN3 MODEL ARCHITECTURE ANALYSIS
+================================================================================
+
+Loading model: Qwen/Qwen3-0.6B
+✓ Model loaded successfully
+
+================================================================================
+MODEL STRUCTURE OVERVIEW
+================================================================================
+
+Model class: Qwen3ForCausalLM
+Config: qwen3
+Number of layers: 28
+Hidden size: 1024
+Intermediate size: 3072
+Number of attention heads: 16
+Number of KV heads: 8
+Vocabulary size: 151936
+Max position embeddings: 40960
+
+================================================================================
+PARAMETER COUNTS
+================================================================================
+
+Total parameters: 596,049,920
+Trainable parameters: 596,049,920
+Percentage trainable: 100.00%
+
+================================================================================
+LAYER-BY-LAYER ARCHITECTURE
+================================================================================
+
+[EMBEDDING LAYER]
+  embed_tokens: Embedding(151936, 1024)
+  Parameters: 155,582,464
+
+[DECODER LAYERS]
+
+  Layer 0:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 1:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 2:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 3:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 4:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 5:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 6:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 7:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 8:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 9:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 10:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 11:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 12:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 13:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 14:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 15:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 16:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 17:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 18:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 19:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 20:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 21:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 22:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 23:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 24:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 25:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 26:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+  Layer 27:
+    Type: Qwen3DecoderLayer
+    Self Attention:
+      q_proj: Linear(in_features=1024, out_features=2048, bias=False)
+      k_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      v_proj: Linear(in_features=1024, out_features=1024, bias=False)
+      o_proj: Linear(in_features=2048, out_features=1024, bias=False)
+      Attention parameters: 6,291,712
+    MLP:
+      gate_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      up_proj: Linear(in_features=1024, out_features=3072, bias=False)
+      down_proj: Linear(in_features=3072, out_features=1024, bias=False)
+      MLP parameters: 9,437,184
+    input_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    post_attention_layernorm: Qwen3RMSNorm((1024,), eps=1e-06)
+    Total layer parameters: 15,730,944
+
+[FINAL LAYER NORM]
+  norm: Qwen3RMSNorm((1024,), eps=1e-06)
+  Parameters: 1,024
+
+[LANGUAGE MODEL HEAD]
+  lm_head: Linear(in_features=1024, out_features=151936, bias=False)
+  Parameters: 155,582,464
+
+================================================================================
+PARAMETER SUMMARY BY COMPONENT
+================================================================================
+
+Embedding layer: 155,582,464 (26.10%)
+Decoder layers: 440,466,432 (73.90%)
+Final layer norm: 1,024 (0.00%)
+LM head: 155,582,464 (26.10%)
+
+Total: 596,049,920
+
+================================================================================
+MEMORY FOOTPRINT
+================================================================================
+
+Model size (bf16): 1136.88 MB (1.1102 GB)
+Model size (fp32): 2273.75 MB (2.2205 GB)
+
+================================================================================
+ANALYSIS COMPLETE
+================================================================================

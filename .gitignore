@@ -183,3 +183,7 @@ test-results/
 # AI agent local setup artifacts
 /.agents/skills
 /.claude/skills
+.venv/
+qwen3_training_setup/.venv/
+qwen3_training_setup/wandb/
+qwen3_training_setup/outputs/

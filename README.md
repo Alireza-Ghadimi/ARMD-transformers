@@ -61,7 +61,7 @@ limitations under the License.
 </h3>
 
 <h3 align="center">
-    <img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/transformers_as_a_model_definition.png"/>
+    <img src="/home/ghadimi/projects/aip-aghodsib/ghadimi/ARMD-transformers/ARMD-HugginFace-logo.png"/>
 </h3>
 
 Transformers acts as the model-definition framework for state-of-the-art machine learning with text, computer

@@ -1,0 +1,68 @@
+# Training Configuration for Qwen3-0.6B
+# 
+# This file contains default hyperparameters for training.
+# Override these with command-line arguments.
+
+model:
+  name: "Qwen/Qwen3-0.6B"
+  max_length: 512
+  
+data:
+  train_path: "data/train.txt"
+  text_field: "text"  # For JSON/JSONL datasets
+  
+training:
+  # Core hyperparameters
+  num_train_epochs: 3
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 1
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  
+  # Learning rate schedule
+  lr_scheduler_type: "cosine"
+  warmup_steps: 100
+  max_grad_norm: 1.0
+  
+  # Mixed precision
+  bf16: true  # Use bfloat16 on modern GPUs
+  fp16: false  # Use float16 on older GPUs
+  
+  # Memory optimization
+  gradient_checkpointing: false  # Enable if OOM
+  
+  # Optimizer
+  optim: "adamw_torch"
+  
+# Logging and checkpoints
+logging:
+  logging_steps: 10
+  save_steps: 500
+  eval_steps: 500
+  save_total_limit: 3
+  report_to: "tensorboard"  # or "wandb"
+  
+output:
+  output_dir: "./outputs/qwen3_finetuned"
+  
+# Other settings
+seed: 42
+dataloader_num_workers: 4
+
+# Hardware-specific recommendations:
+# 
+# For GPUs with 8GB VRAM:
+#   per_device_train_batch_size: 1
+#   gradient_accumulation_steps: 4
+#   gradient_checkpointing: true
+#   max_length: 256
+# 
+# For GPUs with 16GB VRAM:
+#   per_device_train_batch_size: 4
+#   gradient_accumulation_steps: 1
+#   max_length: 512
+# 
+# For GPUs with 24GB+ VRAM:
+#   per_device_train_batch_size: 8
+#   gradient_accumulation_steps: 1
+#   max_length: 1024

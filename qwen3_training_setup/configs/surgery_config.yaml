@@ -1,0 +1,53 @@
+# Layer Surgery Configuration for Qwen3
+# 
+# This file configures which layers to modify and how.
+
+layer_surgery:
+  # Which layers to replace (0-indexed)
+  # For Qwen3-0.6B with 28 layers, valid indices are 0-27
+  # 
+  # Examples:
+  #   - Early layers: [0, 1, 2]
+  #   - Middle layers: [12, 13, 14, 15]
+  #   - Late layers: [24, 25, 26, 27]
+  #   - Alternating: [2, 4, 6, 8, 10]
+  replace_layers: [12, 13, 14]  # Middle layers by default
+  
+  # Custom layer configuration
+  custom_tag: "modified"  # Tag for identification
+  
+  # Training strategy
+  freeze_unchanged_layers: false  # If true, only train modified layers
+  
+  # Weight initialization for custom layers
+  # Options:
+  #   - "pretrained": Copy from original layer (if compatible)
+  #   - "random": Random initialization
+  #   - "xavier": Xavier initialization
+  init_strategy: "pretrained"
+
+# Layer modification examples:
+#
+# Example 1: Replace middle layers for probing
+#   replace_layers: [12, 13, 14]
+#   freeze_unchanged_layers: true
+#   # This trains only the middle layers
+#
+# Example 2: Progressive layer replacement
+#   replace_layers: [14]  # Start with one layer
+#   # After training, expand to [13, 14, 15]
+#
+# Example 3: Attention-focused modifications
+#   # Modify only attention in specific layers
+#   # (requires custom implementation in model_wrapper.py)
+#
+# Example 4: MLP-focused modifications
+#   # Replace only MLP blocks
+#   # (requires custom implementation in model_wrapper.py)
+
+# Notes:
+# - Qwen3-0.6B has 28 decoder layers (indices 0-27)
+# - Modified layers will be randomly initialized unless 
+#   they are compatible with the pretrained architecture
+# - Consider starting with fewer layers and expanding gradually
+# - Middle layers (around layer 12-15) often work well for modifications
