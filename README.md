@@ -61,7 +61,7 @@ limitations under the License.
 </h3>
 
 <h3 align="center">
-    <img src="/home/ghadimi/projects/aip-aghodsib/ghadimi/ARMD-transformers/ARMD-HugginFace-logo.png"/>
+    <img src="ARMD-HugginFace-logo.png"/>
 </h3>
 
 Transformers acts as the model-definition framework for state-of-the-art machine learning with text, computer
