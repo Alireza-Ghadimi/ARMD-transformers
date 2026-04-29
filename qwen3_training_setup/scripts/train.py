@@ -119,6 +119,12 @@ def parse_args():
     parser.add_argument("--create_sample_data", action="store_true",
                         help="Create sample dataset if data doesn't exist")
     
+    # DeepSpeed
+    parser.add_argument("--deepspeed", type=str, default=None,
+                        help="Path to DeepSpeed config file (e.g., ds_config_zero3.json)")
+    parser.add_argument("--local_rank", type=int, default=-1,
+                        help="Local rank for distributed training (automatically set by DeepSpeed)")
+    
     return parser.parse_args()
 
 

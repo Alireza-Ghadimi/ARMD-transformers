@@ -69,6 +69,7 @@ class Qwen3TrainingConfig:
     # Advanced
     gradient_checkpointing: bool = False
     max_steps: int = -1  # -1 means use num_train_epochs
+    deepspeed: Optional[str] = None  # Path to DeepSpeed config file
     
     def to_training_arguments(self) -> TrainingArguments:
         """Convert to Transformers TrainingArguments."""
@@ -101,6 +102,7 @@ class Qwen3TrainingConfig:
             report_to=self.report_to,
             gradient_checkpointing=self.gradient_checkpointing,
             max_steps=self.max_steps,
+            deepspeed=self.deepspeed,
         )
 
 
